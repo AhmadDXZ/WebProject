@@ -6,7 +6,7 @@ export default function Header() {
     <header className="header">
       <nav className="nav">
         <div className="left-nav">
-          <h1 className="logo">My Project</h1>
+          <h1 className="logo">Online Bookshop</h1>
           <div className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/login">Login</Link>

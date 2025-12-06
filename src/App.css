@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #f8f9fa;
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f6f8;
   color: #333;
 }
 
@@ -13,31 +15,31 @@ body {
 
 main {
   flex: 1;
-  padding: 2rem;
+  padding: 2rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .header {
-  background-color: #f1f1f1;
-  padding: 1.2rem 2rem;
-  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-}
-
-.left-nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #007bff;
 }
 
 .nav-links {
@@ -49,77 +51,100 @@ main {
   color: #333;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1rem; 
+  transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  text-decoration: underline;
+  color: #007bff;
 }
 
 .main-page h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #222;
 }
 
 .controls {
   display: flex;
   gap: 1rem;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .controls input,
 .controls select {
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.9rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  transition: border-color 0.2s;
+}
+
+.controls input:focus,
+.controls select:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .book-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
 .book-card {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 1.2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .book-card h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
+  color: #007bff;
 }
 
 .book-card p {
   margin: 0.25rem 0;
   font-size: 0.95rem;
+  color: #555;
 }
 
 .auth-page,
 .about-page {
-  background: #fff;
+  background: #ffffff;
   padding: 2rem;
   max-width: 500px;
   margin: 2rem auto;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .auth-form input {
-  padding: 0.5rem;
+  padding: 0.6rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.auth-form input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .auth-form button {
@@ -128,8 +153,9 @@ main {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .auth-form button:hover {
@@ -139,10 +165,11 @@ main {
 @media (max-width: 768px) {
   .controls {
     flex-direction: column;
+    gap: 0.75rem;
   }
 
   .nav-links {
-    gap: 1rem;
     flex-wrap: wrap;
+    justify-content: flex-end;
   }
 }
