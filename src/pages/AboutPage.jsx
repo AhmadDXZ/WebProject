@@ -15,7 +15,10 @@ export default function AboutPage() {
         and a responsive layout that works on all devices.
       </p>
       <p>
-        Developed by: <strong>Team CodeCrafters</strong><br />
+        Developed by: <br />
+        <strong>HUTHAIFA MAIN ABDEL RAZZAQ ALZAITY "2145734"</strong><br />
+        <strong>Ahmad Hisham Abdullah "2145341"</strong><br />
+        <strong>Nabeel Shareef Nabeel Al Azzeh "2145477"</strong><br />
         Technologies: React, JavaScript (ES6+), CSS, Render.com
       </p>
     </section>
