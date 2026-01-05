@@ -6,10 +6,29 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Registering user: ${fullName}`);
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch('http://localhost:5000/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: email, password }), // Map email to username for backend
+    });
+
+    const data = await response.json(); // <--- READ THE SERVER RESPONSE
+
+    if (response.ok) {
+      alert("Registration Successful! Please login.");
+      window.location.href = '/login';
+    } else {
+      // Alert the ACTUAL error message from the server
+      alert("Registration failed: " + (data.message || data.error)); 
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Network Error: Is the backend server running?");
+  }
+};
 
   return (
     <section className="auth-page">

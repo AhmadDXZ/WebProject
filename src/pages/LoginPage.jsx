@@ -5,9 +5,20 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Logging in with email: ${email}`);
+  const handleSubmit = async () => {
+    // inside handleSubmit
+const response = await fetch('http://localhost:5000/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username: email, password }),
+    credentials: 'include' // CRITICAL: This allows the server to set the cookie
+});
+
+if (response.ok) {
+    window.location.href = '/'; // Redirect to main page
+} else {
+    alert("Invalid credentials");
+}
   };
 
   return (
