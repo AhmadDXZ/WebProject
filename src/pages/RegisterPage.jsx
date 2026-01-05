@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import '../Auth.css';
 
@@ -66,5 +65,4 @@ export default function RegisterPage() {
     </section>
   );
 }
-=======
->>>>>>> 39e0a01db80dac90f19aec57a4dd320b79abf6ef
+
